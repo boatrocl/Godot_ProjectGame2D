@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dt8gt5s4ywy0r"]
+
+[ext_resource type="Texture2D" uid="uid://1kcs562skgwk" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Enemies/Alien3.png" id="1_2gpuw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eogs"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(0, 90, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cwmm"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(48, 90, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfkfl"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(96, 90, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gge0e"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(144, 90, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tggi5"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(192, 90, 48, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohlde"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eogs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cwmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfkfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gge0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tggi5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqvt5"]
+radius = 24.7588
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(45.5, 22.75)
+scale = Vector2(1.5, 1.691)
+sprite_frames = SubResource("SpriteFrames_ohlde")
+frame_progress = 0.0906096
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(53, 33)
+shape = SubResource("CircleShape2D_nqvt5")
