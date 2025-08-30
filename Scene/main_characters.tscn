@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://cc6nmemomjg0w"]
+
+[ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esnew"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31dd5"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1xas"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mg8i2"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8dfa"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(192, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwi4g"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(240, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fapi"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(288, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdv6g"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(336, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igeuf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esnew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31dd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1xas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mg8i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8dfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwi4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fapi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdv6g")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvnal"]
+
+[node name="Main_Characters" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_igeuf")
+animation = &"run"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_lvnal")
