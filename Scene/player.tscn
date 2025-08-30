@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cc6nmemomjg0w"]
+[gd_scene load_steps=13 format=3 uid="uid://cc6nmemomjg0w"]
 
 [ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
+[ext_resource type="Script" uid="uid://cnkl1ydo8yhq1" path="res://Scripts/Player.gd" id="1_esnew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esnew"]
 atlas = ExtResource("1_8cr6n")
@@ -68,7 +69,8 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvnal"]
 
-[node name="Main_Characters" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_esnew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_igeuf")

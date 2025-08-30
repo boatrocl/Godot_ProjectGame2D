@@ -1,7 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1756566310
+::res://::1756567721
 icon.svg::CompressedTexture2D/CompressedTexture2D::1430405257794458240::1755857392::1755857399::1::::<><><>0<>0<>90f56c8ec591efd10e94b810ca41fc28<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1756566124::0::1::::<><><>0<>0<><>::
+README.md::TextFile/TextFile::-1::1756566124::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1756566125
 ::res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/::1756566242
 COUPON.png::CompressedTexture2D/CompressedTexture2D::575612170961437677::1686651266::1755857644::1::::<><><>0<>0<>225e6891209ff9697bd96c1fe67b9856<>res://.godot/imported/COUPON.png-659516e47c8a819dbfaef18dcb6914b5.ctex::
@@ -47,6 +47,7 @@ Trap3.png::CompressedTexture2D/CompressedTexture2D::5180931018790445155::1713604
 Trap4.png::CompressedTexture2D/CompressedTexture2D::5426974346777689293::1713604348::1755857644::1::::<><><>0<>0<>85108c0a944eefcdce4281b8ae26121d<>res://.godot/imported/Trap4.png-d4fcb571897d6a1a828eca40b5872797.ctex::
 Trap5.png::CompressedTexture2D/CompressedTexture2D::6906027082986350030::1713604128::1755857644::1::::<><><>0<>0<>0adaa9be3251e53c599cc59071090471<>res://.godot/imported/Trap5.png-2e4f2ad4900f105c945fc6d3336ec817.ctex::
 Trap6.png::CompressedTexture2D/CompressedTexture2D::3338488614301910370::1713603999::1755857644::1::::<><><>0<>0<>375b0c633e9f1fc8e1cfacaa56838257<>res://.godot/imported/Trap6.png-48e5f72f93c650cc40162a2e59eebc27.ctex::
-::res://Scene/::1756566125
-main_characters.tscn::PackedScene/PackedScene::4978025744754489800::1755859177::0::1::::<><><>0<>0<><>::uid://brg7r2j2ol4qw::::res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png
-::res://Scripts/::1755857686
+::res://Scene/::1756567721
+main_characters.tscn::PackedScene::4978025744754489800::1756567721::0::1::::<><><>0<>0<><>::uid://brg7r2j2ol4qw::::res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png<>uid://cnkl1ydo8yhq1::::res://Scripts/Player.gd
+::res://Scripts/::1756567721
+Player.gd::GDScript::5706655695659142950::1756567603::0::1::::<>CharacterBody2D<><>0<>0<><>::
