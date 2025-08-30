@@ -1,5 +1,2 @@
-res://Scene/main_characters.tscn
-res://Scene/Player.gd
 res://Scene/main.tscn
 res://Scene/player.tscn
-res://Scripts/Player.gd
