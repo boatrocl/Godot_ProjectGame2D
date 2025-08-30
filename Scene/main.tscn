@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwrqgcif0dmhq"]
 
 [ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="1_f6udf"]
-[ext_resource type="PackedScene" uid="uid://cc6nmemomjg0w" path="res://Scene/player.tscn" id="2_sblpm"]
+[ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="2_sblpm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sblpm"]
 texture = ExtResource("1_f6udf")
