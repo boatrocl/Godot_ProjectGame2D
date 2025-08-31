@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c5nli0gayb7re" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap5.png" id="5_5g1s2"]
 [ext_resource type="Texture2D" uid="uid://cjk4qevx2m2fh" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap4.png" id="8_1bjei"]
 [ext_resource type="Texture2D" uid="uid://dmt1lhf8i0hgb" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="8_aiv1b"]
-[ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Enemies.tscn" id="10_1bjei"]
+[ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="10_1bjei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
 texture = ExtResource("2_dwyiq")
