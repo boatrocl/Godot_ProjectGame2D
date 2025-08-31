@@ -13,7 +13,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	look_at(get_global_mouse_position())
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("shoot"):
 		fire()
 	var horizontal_input = 0
 	if Input.is_action_pressed("right"):
