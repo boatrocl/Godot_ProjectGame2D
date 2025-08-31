@@ -589,10 +589,8 @@ texture = ExtResource("8_aiv1b")
 hframes = 5
 script = SubResource("GDScript_5py54")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
 [node name="CharacterBody2D3" parent="." instance=ExtResource("10_1bjei")]
-position = Vector2(661, 350)
+position = Vector2(672, 358)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("10_1bjei")]
-position = Vector2(215, 348)
+position = Vector2(215, 359)

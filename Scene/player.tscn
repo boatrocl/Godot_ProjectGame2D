@@ -1,7 +1,19 @@
-[gd_scene load_steps=19 format=3 uid="uid://bn65le7icy0js"]
+[gd_scene load_steps=22 format=3 uid="uid://bn65le7icy0js"]
 
 [ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
 [ext_resource type="Script" uid="uid://cnkl1ydo8yhq1" path="res://Scripts/Player.gd" id="1_esnew"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sw5t"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij4jb"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c68nv"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(96, 96, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8w33"]
 atlas = ExtResource("1_8cr6n")
@@ -62,6 +74,20 @@ region = Rect2(336, 48, 48, 48)
 [sub_resource type="SpriteFrames" id="SpriteFrames_igeuf"]
 animations = [{
 "frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_2sw5t")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ij4jb")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_c68nv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y8w33")
 }, {
@@ -121,9 +147,8 @@ script = ExtResource("1_esnew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_igeuf")
-animation = &"jump"
-frame = 3
-frame_progress = 0.135986
+animation = &"idle"
+frame_progress = 0.263398
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
