@@ -44,7 +44,7 @@ func _physics_process(delta):
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.play()
 	
-	#flip Sprite h
+	#flip Sprite
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
 	elif velocity.x < 0:
