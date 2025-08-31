@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bn65le7icy0js"]
+[gd_scene load_steps=36 format=3 uid="uid://bn65le7icy0js"]
 
 [ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
 [ext_resource type="Script" uid="uid://cnkl1ydo8yhq1" path="res://Scripts/Player.gd" id="1_esnew"]
@@ -95,6 +95,38 @@ region = Rect2(288, 48, 48, 48)
 atlas = ExtResource("1_8cr6n")
 region = Rect2(336, 48, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c40dt"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhccw"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7d6xm"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sr8w"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vqkc"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uktg4"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx4b7"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(336, 0, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_igeuf"]
 animations = [{
 "frames": [{
@@ -135,13 +167,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_y8w33")
 }, {
-"duration": 1.0,
+"duration": 0.2,
 "texture": SubResource("AtlasTexture_xa75v")
 }, {
-"duration": 1.0,
+"duration": 0.4,
 "texture": SubResource("AtlasTexture_58ae2")
 }, {
 "duration": 1.0,
@@ -185,34 +217,59 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_c40dt")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_lgjog")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_lhccw")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_7d6xm")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_2sr8w")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_1vqkc")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_uktg4")
+}, {
+"duration": 0.2,
+"texture": SubResource("AtlasTexture_jx4b7")
+}],
+"loop": true,
+"name": &"run_attack",
+"speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_y8w33"]
-resource_name = "new_animation"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8w33"]
+size = Vector2(16, 24)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xa75v"]
-_data = {
-&"new_animation": SubResource("Animation_y8w33")
-}
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lvnal"]
-
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_esnew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_igeuf")
-animation = &"idle"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_xa75v")
-}
+animation = &"jump"
+frame_progress = 0.830432
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
-shape = SubResource("CapsuleShape2D_lvnal")
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_y8w33")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="FiringPos" type="Marker2D" parent="."]
 light_mask = 3
 visibility_layer = 3
+position = Vector2(15, -4)
+
+[node name="AttackTimer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

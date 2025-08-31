@@ -1,8 +1,8 @@
 res://Scene/player.tscn
 res://Scene/main.tscn
-res://Level1.tscn
-res://Scene/Enemies.tscn
-res://Scripts/Player.gd
 res://Scene/Level1.tscn
-res://Scripts/bullet.gd
+res://Scene/Enemies.tscn
 res://Scene/bullet.tscn
+res://Scripts/Player.gd
+res://Scripts/bullet.gd
+res://Scripts/enemies.gd

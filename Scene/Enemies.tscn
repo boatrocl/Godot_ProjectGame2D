@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://dt8gt5s4ywy0r"]
+[gd_scene load_steps=14 format=3 uid="uid://dt8gt5s4ywy0r"]
 
 [ext_resource type="Texture2D" uid="uid://1kcs562skgwk" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Enemies/Alien3.png" id="1_2gpuw"]
+[ext_resource type="Script" uid="uid://b16bxv534m2vo" path="res://Scripts/enemies.gd" id="1_l1wno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8eogs"]
 atlas = ExtResource("1_2gpuw")
@@ -22,13 +23,25 @@ region = Rect2(144, 90, 48, 45)
 atlas = ExtResource("1_2gpuw")
 region = Rect2(192, 90, 48, 45)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1wno"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(0, 0, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6np6"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(48, 0, 48, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_goxp7"]
+atlas = ExtResource("1_2gpuw")
+region = Rect2(96, 0, 48, 45)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ohlde"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_8eogs")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": SubResource("AtlasTexture_1cwmm")
 }, {
 "duration": 1.0,
@@ -41,24 +54,59 @@ animations = [{
 "texture": SubResource("AtlasTexture_tggi5")
 }],
 "loop": true,
-"name": &"default",
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1wno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6np6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_goxp7")
+}],
+"loop": true,
+"name": &"idle",
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_nqvt5"]
-radius = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm8ri"]
+size = Vector2(20, 27)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6np6"]
+size = Vector2(148.5, 20)
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 3
 collision_mask = 3
+script = ExtResource("1_l1wno")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(45.5, 22.75)
+position = Vector2(-2.5, -21.25)
 scale = Vector2(1, 1.127)
 sprite_frames = SubResource("SpriteFrames_ohlde")
-frame_progress = 0.0906096
+animation = &"idle"
+frame_progress = 0.961546
 flip_h = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48, 30)
-shape = SubResource("CircleShape2D_nqvt5")
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_hm8ri")
+
+[node name="BulletTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="FiringPos" type="Marker2D" parent="."]
+position = Vector2(-16, -19)
+
+[node name="PlayerDetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
+position = Vector2(-89.75, -14)
+shape = SubResource("RectangleShape2D_u6np6")
+
+[connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
+[connection signal="body_exited" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_exited"]
