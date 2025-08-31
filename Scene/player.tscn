@@ -1,7 +1,31 @@
-[gd_scene load_steps=13 format=3 uid="uid://bn65le7icy0js"]
+[gd_scene load_steps=19 format=3 uid="uid://bn65le7icy0js"]
 
 [ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
 [ext_resource type="Script" uid="uid://cnkl1ydo8yhq1" path="res://Scripts/Player.gd" id="1_esnew"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8w33"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xa75v"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58ae2"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(96, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivevv"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(144, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6jsd"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(192, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6qlh"]
+atlas = ExtResource("1_8cr6n")
+region = Rect2(240, 144, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_esnew"]
 atlas = ExtResource("1_8cr6n")
@@ -39,6 +63,29 @@ region = Rect2(336, 48, 48, 48)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_y8w33")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xa75v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58ae2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivevv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6jsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6qlh")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_esnew")
 }, {
 "duration": 1.0,
@@ -74,7 +121,9 @@ script = ExtResource("1_esnew")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_igeuf")
-animation = &"run"
+animation = &"jump"
+frame = 3
+frame_progress = 0.135986
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
