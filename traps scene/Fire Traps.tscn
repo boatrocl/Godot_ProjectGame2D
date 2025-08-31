@@ -1,0 +1,90 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnpwj1udp6ojw"]
+
+[ext_resource type="Texture2D" uid="uid://bxhodb6xu68p1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap2.png" id="1_0eslu"]
+[ext_resource type="Script" uid="uid://myxm0o736olw" path="res://traps scene/fire_traps.gd" id="1_bnrox"]
+[ext_resource type="Script" uid="uid://bsnqac51gu73w" path="res://traps scene/animation_player.gd" id="2_aleqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aleqd"]
+size = Vector2(36, 89.5)
+
+[sub_resource type="Animation" id="Animation_bnrox"]
+resource_name = "Firwe"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trap2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.13333, 1.16667, 1.2, 1.23333, 1.26667, 1.3, 1.33333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.25, 1.26),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ybuu7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Trap2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o17e7"]
+_data = {
+&"Firwe": SubResource("Animation_bnrox"),
+&"RESET": SubResource("Animation_ybuu7")
+}
+
+[node name="Fire Traps" type="StaticBody2D"]
+script = ExtResource("1_bnrox")
+
+[node name="Trap2" type="Sprite2D" parent="."]
+position = Vector2(-16, 57)
+scale = Vector2(2.2, 2.2)
+texture = ExtResource("1_0eslu")
+hframes = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, 78.25)
+shape = SubResource("RectangleShape2D_aleqd")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_o17e7")
+}
+script = ExtResource("2_aleqd")

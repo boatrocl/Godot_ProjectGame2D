@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://cebcdfp5e22kr"]
+
+[ext_resource type="Texture2D" uid="uid://c5nli0gayb7re" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap5.png" id="1_12qda"]
+[ext_resource type="Script" uid="uid://tvamkg56gtte" path="res://traps scene/suriken.gd" id="1_86w0f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86w0f"]
+radius = 20.025
+
+[sub_resource type="Animation" id="Animation_umc3x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qftii"]
+resource_name = "spine"
+length = 0.12
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nmucy"]
+_data = {
+&"RESET": SubResource("Animation_umc3x"),
+&"spine": SubResource("Animation_qftii")
+}
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_86w0f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2, 6.5)
+scale = Vector2(0.916667, 0.796875)
+texture = ExtResource("1_12qda")
+hframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 8)
+shape = SubResource("CircleShape2D_86w0f")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nmucy")
+}
