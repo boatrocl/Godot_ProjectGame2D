@@ -1,16 +1,16 @@
 [gd_scene load_steps=37 format=3 uid="uid://2dykxithfprb"]
 
-[ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_cove1"]
-[ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="2_dwyiq"]
-[ext_resource type="Texture2D" uid="uid://xapcg7duxdbx" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset_details.png" id="3_dn5ey"]
-[ext_resource type="Texture2D" uid="uid://cf2xgasj6o4sl" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap3.png" id="4_1bjei"]
-[ext_resource type="Texture2D" uid="uid://c5nli0gayb7re" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap5.png" id="5_5g1s2"]
-[ext_resource type="Texture2D" uid="uid://cjk4qevx2m2fh" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap4.png" id="8_1bjei"]
-[ext_resource type="Texture2D" uid="uid://dmt1lhf8i0hgb" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="8_aiv1b"]
-[ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="10_1bjei"]
+[ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_fpa3h"]
+[ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="2_ofx4i"]
+[ext_resource type="Texture2D" uid="uid://xapcg7duxdbx" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset_details.png" id="3_lfbnc"]
+[ext_resource type="Texture2D" uid="uid://cf2xgasj6o4sl" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap3.png" id="4_d8c13"]
+[ext_resource type="Texture2D" uid="uid://c5nli0gayb7re" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap5.png" id="5_8m71o"]
+[ext_resource type="Texture2D" uid="uid://cjk4qevx2m2fh" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap4.png" id="6_cu1y2"]
+[ext_resource type="Texture2D" uid="uid://dmt1lhf8i0hgb" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="7_xb73i"]
+[ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="8_xj5bp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
-texture = ExtResource("2_dwyiq")
+texture = ExtResource("2_ofx4i")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -3.0576, -5.78947, -6.79634, 8, -7.04805, 8, 8)
 1:0/0 = 0
@@ -241,7 +241,7 @@ texture = ExtResource("2_dwyiq")
 8:13/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlbie"]
-texture = ExtResource("3_dn5ey")
+texture = ExtResource("3_lfbnc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -371,39 +371,39 @@ sources/0 = SubResource("TileSetAtlasSource_lmyl5")
 sources/1 = SubResource("TileSetAtlasSource_mlbie")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5g1s2"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(0, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aiv1b"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(48, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wapi5"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(96, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a2cb0"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(144, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3gjqj"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(192, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g56ap"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(240, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_na6ls"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(288, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjxbk"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(336, 0, 48, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jhf0"]
-atlas = ExtResource("4_1bjei")
+atlas = ExtResource("4_d8c13")
 region = Rect2(384, 0, 48, 80)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jl3d8"]
@@ -442,19 +442,19 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_58k54"]
-atlas = ExtResource("5_5g1s2")
+atlas = ExtResource("5_8m71o")
 region = Rect2(0, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e0n1a"]
-atlas = ExtResource("5_5g1s2")
+atlas = ExtResource("5_8m71o")
 region = Rect2(48, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2g1yb"]
-atlas = ExtResource("5_5g1s2")
+atlas = ExtResource("5_8m71o")
 region = Rect2(96, 0, 48, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0lcl8"]
-atlas = ExtResource("5_5g1s2")
+atlas = ExtResource("5_8m71o")
 region = Rect2(144, 0, 48, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p1166"]
@@ -478,35 +478,35 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp6ii"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nqrg8"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3brtn"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_exy8o"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2naj"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lqyf"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fc7d"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_chykk"]
-atlas = ExtResource("8_1bjei")
+atlas = ExtResource("6_cu1y2")
 region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kuj8k"]
@@ -545,7 +545,7 @@ animations = [{
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_cove1")]
+[node name="Player" parent="." instance=ExtResource("1_fpa3h")]
 position = Vector2(28, 428)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -585,12 +585,12 @@ frame_progress = 0.0639776
 
 [node name="Door" type="Sprite2D" parent="."]
 position = Vector2(892, 425)
-texture = ExtResource("8_aiv1b")
+texture = ExtResource("7_xb73i")
 hframes = 5
 script = SubResource("GDScript_5py54")
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("10_1bjei")]
+[node name="CharacterBody2D3" parent="." instance=ExtResource("8_xj5bp")]
 position = Vector2(672, 358)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("10_1bjei")]
+[node name="CharacterBody2D2" parent="." instance=ExtResource("8_xj5bp")]
 position = Vector2(215, 359)

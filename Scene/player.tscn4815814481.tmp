@@ -191,6 +191,8 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_esnew")
+speed = null
+jump_force = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_igeuf")

@@ -3,3 +3,4 @@ res://Scene/main.tscn
 res://Level1.tscn
 res://Scene/Enemies.tscn
 res://Scripts/Player.gd
+res://Scene/Level1.tscn
