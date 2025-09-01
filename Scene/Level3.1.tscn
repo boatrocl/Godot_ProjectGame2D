@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bttfykg38snv1"]
+[gd_scene load_steps=18 format=4 uid="uid://bttfykg38snv1"]
 
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="1_i57dy"]
 [ext_resource type="PackedScene" uid="uid://ex7os1e74mg5" path="res://traps scene/Traps lightning.tscn" id="2_nh8bw"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="10_moy44"]
 [ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scene/game_ui.gd" id="11_nh8bw"]
 [ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="12_2haq7"]
+[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="13_gg2bf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20oq0"]
 texture = ExtResource("6_1bfif")
@@ -265,6 +266,9 @@ sources/0 = SubResource("TileSetAtlasSource_20oq0")
 [sub_resource type="AtlasTexture" id="AtlasTexture_gg2bf"]
 atlas = ExtResource("12_2haq7")
 region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uiwp8"]
+font = ExtResource("13_gg2bf")
 
 [node name="Level3" type="Node2D"]
 position = Vector2(441, 274)
@@ -859,7 +863,8 @@ anchors_preset = -1
 offset_left = 1010.0
 offset_top = 26.0
 offset_right = 1033.0
-offset_bottom = 75.0
+offset_bottom = 69.0
 scale = Vector2(3, 3)
 text = "x 3
 "
+label_settings = SubResource("LabelSettings_uiwp8")

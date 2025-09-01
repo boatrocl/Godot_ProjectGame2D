@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://gtvmdi44t2oi"]
+[gd_scene load_steps=19 format=4 uid="uid://gtvmdi44t2oi"]
 
 [ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="1_hpk84"]
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_okb4r"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="10_jxtda"]
 [ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scene/game_ui.gd" id="11_tjvjx"]
 [ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="12_7mi2m"]
+[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="13_7mi2m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4jrf"]
 texture = ExtResource("1_hpk84")
@@ -424,6 +425,9 @@ sources/1 = SubResource("TileSetAtlasSource_jxtda")
 atlas = ExtResource("12_7mi2m")
 region = Rect2(0, 48, 16, 16)
 
+[sub_resource type="LabelSettings" id="LabelSettings_c51k5"]
+font = ExtResource("13_7mi2m")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_okb4r")]
@@ -793,3 +797,4 @@ offset_bottom = 75.0
 scale = Vector2(3, 3)
 text = "x 3
 "
+label_settings = SubResource("LabelSettings_c51k5")
