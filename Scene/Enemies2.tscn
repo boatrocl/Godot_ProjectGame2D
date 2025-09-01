@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://c3wss5tewdeqx"]
 
 [ext_resource type="Texture2D" uid="uid://lsllrf7dm428" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Enemies/Alien6.png" id="1_443xm"]
-[ext_resource type="Script" uid="uid://bow85hiqjltjk" path="res://Scene/enemies_2.gd" id="1_fm3ow"]
+[ext_resource type="Script" uid="uid://bow85hiqjltjk" path="res://Scripts/enemies_2.gd" id="1_fm3ow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fm3ow"]
 atlas = ExtResource("1_443xm")

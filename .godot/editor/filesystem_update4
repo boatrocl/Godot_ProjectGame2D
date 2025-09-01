@@ -1,4 +1,3 @@
-res://Scene/Level3.1.tscn
 res://Scene/player.tscn
 res://Scene/main.tscn
 res://Scene/Level1.tscn
@@ -10,4 +9,7 @@ res://traps scene/suriken.tscn
 res://Scene/Level2.tscn
 res://traps scene/Fire Traps.tscn
 res://Scene/Enemies2.tscn
+res://Scene/Level3.1.tscn
 res://Scene/Coin.tscn
+res://Scene/coin.gd
+res://Scripts/coin.gd

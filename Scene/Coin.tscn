@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://jo8oyxkxxr08"]
 
 [ext_resource type="Texture2D" uid="uid://c5bijo20s84uw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Items.png" id="1_6r8so"]
-[ext_resource type="Script" uid="uid://bn8d8khyw10aj" path="res://Scene/coin.gd" id="1_8bwq1"]
+[ext_resource type="Script" uid="uid://bn8d8khyw10aj" path="res://Scripts/coin.gd" id="1_8bwq1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bwq1"]
 atlas = ExtResource("1_6r8so")
@@ -70,3 +70,5 @@ frame_progress = 0.608984
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_ibk0b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
