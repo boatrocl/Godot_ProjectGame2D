@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bttfykg38snv1"]
+[gd_scene load_steps=16 format=4 uid="uid://bttfykg38snv1"]
 
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="1_i57dy"]
 [ext_resource type="PackedScene" uid="uid://ex7os1e74mg5" path="res://traps scene/Traps lightning.tscn" id="2_nh8bw"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://c3wss5tewdeqx" path="res://Scene/Enemies2.tscn" id="8_dc2c1"]
 [ext_resource type="Texture2D" uid="uid://dmt1lhf8i0hgb" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="9_wrxy1"]
 [ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="10_moy44"]
+[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scene/game_ui.gd" id="11_nh8bw"]
+[ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="12_2haq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20oq0"]
 texture = ExtResource("6_1bfif")
@@ -260,6 +262,10 @@ texture = ExtResource("6_1bfif")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_20oq0")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg2bf"]
+atlas = ExtResource("12_2haq7")
+region = Rect2(0, 48, 16, 16)
+
 [node name="Level3" type="Node2D"]
 position = Vector2(441, 274)
 
@@ -324,7 +330,6 @@ position = Vector2(454, 278)
 position = Vector2(36, 610)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 zoom = Vector2(3, 3)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." groups=["tilemap_colision"]]
@@ -811,3 +816,50 @@ position = Vector2(1031, 195)
 
 [node name="Area2D129" parent="Node2D2" instance=ExtResource("10_moy44")]
 position = Vector2(1040, 195)
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_nh8bw")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Control" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.375
+anchor_top = 7.275
+anchor_right = 0.375
+anchor_bottom = 7.275
+offset_left = -34.0
+offset_top = -305.0
+offset_right = -15.0
+offset_bottom = -291.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 917.0
+offset_top = 11.0
+offset_right = 933.0
+offset_bottom = 27.0
+scale = Vector2(6, 6)
+texture = SubResource("AtlasTexture_gg2bf")
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1010.0
+offset_top = 26.0
+offset_right = 1033.0
+offset_bottom = 75.0
+scale = Vector2(3, 3)
+text = "x 3
+"

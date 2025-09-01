@@ -1,3 +1,4 @@
+res://Scene/Level3.1.tscn
 res://Scene/player.tscn
 res://Scene/bullet.tscn
 res://Scene/Enemies.tscn
@@ -8,8 +9,5 @@ res://traps scene/suriken.tscn
 res://traps scene/Fire Traps.tscn
 res://Scene/Level1.tscn
 res://Scene/Level2.tscn
-res://Scene/Level3.1.tscn
 res://Scene/Coin.tscn
-res://Scripts/fire_traps.gd
-res://Scripts/coin.gd
-res://Scripts/game_manager.gd
+res://Scene/game_ui.gd

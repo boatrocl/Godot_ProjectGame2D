@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://2dykxithfprb"]
+[gd_scene load_steps=19 format=4 uid="uid://2dykxithfprb"]
 
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_fpa3h"]
 [ext_resource type="PackedScene" uid="uid://ex7os1e74mg5" path="res://traps scene/Traps lightning.tscn" id="1_ofx4i"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cebcdfp5e22kr" path="res://traps scene/suriken.tscn" id="9_ofx4i"]
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="10_lfbnc"]
 [ext_resource type="Script" uid="uid://28idr206uuor" path="res://Scripts/game_manager.gd" id="11_d8c13"]
+[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scene/game_ui.gd" id="12_8m71o"]
+[ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="13_cu1y2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
 texture = ExtResource("2_ofx4i")
@@ -421,6 +423,10 @@ sources/1 = SubResource("TileSetAtlasSource_mlbie")
 
 [sub_resource type="GDScript" id="GDScript_5py54"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu1y2"]
+atlas = ExtResource("13_cu1y2")
+region = Rect2(0, 48, 16, 16)
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_fpa3h")]
@@ -629,3 +635,50 @@ position = Vector2(362, 394)
 
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("11_d8c13")
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("12_8m71o")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Control" parent="UserInterface/GameUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.375
+anchor_top = 7.275
+anchor_right = 0.375
+anchor_bottom = 7.275
+offset_left = -34.0
+offset_top = -305.0
+offset_right = -15.0
+offset_bottom = -291.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 917.0
+offset_top = 11.0
+offset_right = 933.0
+offset_bottom = 27.0
+scale = Vector2(6, 6)
+texture = SubResource("AtlasTexture_cu1y2")
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1010.0
+offset_top = 26.0
+offset_right = 1033.0
+offset_bottom = 75.0
+scale = Vector2(3, 3)
+text = "x 3
+"
