@@ -19,7 +19,6 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func _on_player_detection_area_body_entered(body: Node2D) -> void:
-	print("detect")
 	if body.is_in_group("player"):
 		$AnimatedSprite2D.play("attack")
 		$BulletTimer.start()

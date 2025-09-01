@@ -1,15 +1,15 @@
 res://Scene/player.tscn
-res://Scene/main.tscn
-res://Scene/Level1.tscn
-res://Scene/Enemies.tscn
 res://Scene/bullet.tscn
+res://Scene/Enemies.tscn
+res://Scene/Enemies2.tscn
 res://traps scene/Traps lightning.tscn
 res://traps scene/Spike.tscn
 res://traps scene/suriken.tscn
-res://Scene/Level2.tscn
 res://traps scene/Fire Traps.tscn
-res://Scene/Enemies2.tscn
+res://Scene/Level1.tscn
+res://Scene/Level2.tscn
 res://Scene/Level3.1.tscn
 res://Scene/Coin.tscn
-res://Scene/coin.gd
+res://Scripts/fire_traps.gd
 res://Scripts/coin.gd
+res://Scripts/game_manager.gd

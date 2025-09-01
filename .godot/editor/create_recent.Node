@@ -1,7 +1,7 @@
 Node2D
+Area2D
 CollisionShape2D
 AnimatedSprite2D
-Area2D
 Camera2D
 TileMapLayer
 CharacterBody2D

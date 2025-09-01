@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Godot_ProjectGame2D"
-run/main_scene="uid://bttfykg38snv1"
+run/main_scene="uid://2dykxithfprb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://Scripts/game_manager.gd"
 
 [input]
 

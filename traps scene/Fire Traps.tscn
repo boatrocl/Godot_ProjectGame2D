@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cnpwj1udp6ojw"]
 
 [ext_resource type="Texture2D" uid="uid://bxhodb6xu68p1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap2.png" id="1_0eslu"]
-[ext_resource type="Script" uid="uid://myxm0o736olw" path="res://traps scene/fire_traps.gd" id="1_bnrox"]
+[ext_resource type="Script" uid="uid://myxm0o736olw" path="res://Scripts/fire_traps.gd" id="1_bnrox"]
 [ext_resource type="Script" uid="uid://bsnqac51gu73w" path="res://traps scene/animation_player.gd" id="2_aleqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aleqd"]
@@ -69,7 +69,7 @@ _data = {
 &"RESET": SubResource("Animation_ybuu7")
 }
 
-[node name="Fire Traps" type="StaticBody2D"]
+[node name="Fire Traps" type="Area2D"]
 script = ExtResource("1_bnrox")
 
 [node name="Trap2" type="Sprite2D" parent="."]
@@ -88,3 +88,5 @@ libraries = {
 &"": SubResource("AnimationLibrary_o17e7")
 }
 script = ExtResource("2_aleqd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

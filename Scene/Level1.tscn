@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://2dykxithfprb"]
+[gd_scene load_steps=16 format=4 uid="uid://2dykxithfprb"]
 
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_fpa3h"]
 [ext_resource type="PackedScene" uid="uid://ex7os1e74mg5" path="res://traps scene/Traps lightning.tscn" id="1_ofx4i"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="8_xj5bp"]
 [ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="9_lfbnc"]
 [ext_resource type="PackedScene" uid="uid://cebcdfp5e22kr" path="res://traps scene/suriken.tscn" id="9_ofx4i"]
+[ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="10_lfbnc"]
+[ext_resource type="Script" uid="uid://28idr206uuor" path="res://Scripts/game_manager.gd" id="11_d8c13"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
 texture = ExtResource("2_ofx4i")
@@ -421,12 +423,6 @@ sources/1 = SubResource("TileSetAtlasSource_mlbie")
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Lightning 1" parent="." instance=ExtResource("1_ofx4i")]
-position = Vector2(626, 366)
-
-[node name="Lightning 2" parent="." instance=ExtResource("1_ofx4i")]
-position = Vector2(530, 367)
-
 [node name="Player" parent="." instance=ExtResource("1_fpa3h")]
 position = Vector2(28, 428)
 
@@ -444,176 +440,192 @@ texture = ExtResource("7_xb73i")
 hframes = 5
 script = SubResource("GDScript_5py54")
 
-[node name="CharacterBody2D3" parent="." instance=ExtResource("8_xj5bp")]
-position = Vector2(362, 394)
+[node name="Coins" type="Node2D" parent="."]
+position = Vector2(141, 415)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("8_xj5bp")]
-position = Vector2(184, 424)
+[node name="Area2D2" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-14, 0)
 
-[node name="Enemy" parent="." instance=ExtResource("8_xj5bp")]
-position = Vector2(567, 405)
+[node name="Area2D3" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-7, 0)
 
-[node name="Lightning 3" parent="." instance=ExtResource("1_ofx4i")]
-z_index = 4
-position = Vector2(695, 367)
+[node name="Area2D4" parent="Coins" instance=ExtResource("9_lfbnc")]
 
-[node name="spike 3" parent="." instance=ExtResource("8_fpa3h")]
-z_index = -1
-position = Vector2(943, 427)
+[node name="Coin2" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-84, 19)
 
-[node name="spike 2" parent="." instance=ExtResource("8_fpa3h")]
-z_index = -1
-position = Vector2(820, 378)
+[node name="Area2D" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-76, 19)
 
-[node name="spike 1" parent="." instance=ExtResource("8_fpa3h")]
-z_index = -1
-position = Vector2(292, 393)
+[node name="Area2D41" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-57, 1)
 
-[node name="suriken3" parent="." instance=ExtResource("9_ofx4i")]
-z_index = -1
-position = Vector2(482, 391)
+[node name="Area2D42" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-50, 1)
 
-[node name="suriken2" parent="." instance=ExtResource("9_ofx4i")]
-z_index = -1
-position = Vector2(1060, 451)
+[node name="Area2D43" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-43, 1)
 
-[node name="suriken" parent="." instance=ExtResource("9_ofx4i")]
+[node name="Area2D38" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(893, 14)
+
+[node name="Area2D39" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(900, 14)
+
+[node name="Area2D40" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(907, 14)
+
+[node name="Coin" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(-92, 19)
+
+[node name="Area2D5" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(94, -17)
+
+[node name="Area2D6" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(101, -17)
+
+[node name="Area2D7" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(108, -17)
+
+[node name="Area2D8" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(244, -34)
+
+[node name="Area2D9" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(251, -34)
+
+[node name="Area2D10" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(258, -34)
+
+[node name="Area2D11" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(301, -34)
+
+[node name="Area2D12" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(308, -34)
+
+[node name="Area2D13" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(315, -34)
+
+[node name="Area2D14" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(371, -16)
+
+[node name="Area2D15" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(378, -16)
+
+[node name="Area2D16" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(385, -16)
+
+[node name="Area2D17" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(509, -34)
+
+[node name="Area2D18" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(516, -34)
+
+[node name="Area2D19" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(523, -34)
+
+[node name="Area2D20" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(572, -14)
+
+[node name="Area2D21" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(579, -14)
+
+[node name="Area2D22" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(586, -14)
+
+[node name="Area2D23" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(636, -34)
+
+[node name="Area2D24" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(643, -34)
+
+[node name="Area2D25" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(650, -34)
+
+[node name="Area2D26" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(702, -30)
+
+[node name="Area2D27" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(709, -30)
+
+[node name="Area2D28" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(716, -30)
+
+[node name="Area2D29" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(672, -72)
+
+[node name="Area2D30" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(679, -72)
+
+[node name="Area2D31" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(686, -72)
+
+[node name="Area2D32" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(796, -23)
+
+[node name="Area2D33" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(803, -23)
+
+[node name="Area2D34" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(810, -23)
+
+[node name="Area2D35" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(860, 14)
+
+[node name="Area2D36" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(867, 14)
+
+[node name="Area2D37" parent="Coins" instance=ExtResource("9_lfbnc")]
+position = Vector2(874, 14)
+
+[node name="Traps" type="Node2D" parent="."]
+
+[node name="suriken" parent="Traps" instance=ExtResource("9_ofx4i")]
 z_index = -1
 position = Vector2(879, 429)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(141, 415)
+[node name="suriken2" parent="Traps" instance=ExtResource("9_ofx4i")]
+z_index = -1
+position = Vector2(1060, 451)
 
-[node name="Area2D2" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-14, 0)
+[node name="suriken3" parent="Traps" instance=ExtResource("9_ofx4i")]
+z_index = -1
+position = Vector2(482, 391)
 
-[node name="Area2D3" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-7, 0)
+[node name="Fire Traps" parent="Traps" instance=ExtResource("10_lfbnc")]
+position = Vector2(153, 261)
 
-[node name="Area2D4" parent="Node2D" instance=ExtResource("9_lfbnc")]
+[node name="spike 1" parent="Traps" instance=ExtResource("8_fpa3h")]
+z_index = -1
+position = Vector2(292, 393)
 
-[node name="Coin2" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-84, 19)
+[node name="spike 2" parent="Traps" instance=ExtResource("8_fpa3h")]
+z_index = -1
+position = Vector2(820, 378)
 
-[node name="Area2D" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-76, 19)
+[node name="spike 3" parent="Traps" instance=ExtResource("8_fpa3h")]
+z_index = -1
+position = Vector2(943, 427)
 
-[node name="Area2D41" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-57, 1)
+[node name="Lightning 3" parent="Traps" instance=ExtResource("1_ofx4i")]
+z_index = 4
+position = Vector2(695, 367)
 
-[node name="Area2D42" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-50, 1)
+[node name="Lightning 1" parent="Traps" instance=ExtResource("1_ofx4i")]
+position = Vector2(626, 366)
 
-[node name="Area2D43" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-43, 1)
+[node name="Lightning 2" parent="Traps" instance=ExtResource("1_ofx4i")]
+position = Vector2(530, 367)
 
-[node name="Area2D38" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(893, 14)
+[node name="Enemies" type="Node2D" parent="."]
 
-[node name="Area2D39" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(900, 14)
+[node name="Enemy" parent="Enemies" instance=ExtResource("8_xj5bp")]
+position = Vector2(567, 405)
 
-[node name="Area2D40" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(907, 14)
+[node name="CharacterBody2D2" parent="Enemies" instance=ExtResource("8_xj5bp")]
+position = Vector2(184, 424)
 
-[node name="Coin" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(-92, 19)
+[node name="CharacterBody2D3" parent="Enemies" instance=ExtResource("8_xj5bp")]
+position = Vector2(362, 394)
 
-[node name="Area2D5" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(94, -17)
-
-[node name="Area2D6" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(101, -17)
-
-[node name="Area2D7" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(108, -17)
-
-[node name="Area2D8" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(244, -34)
-
-[node name="Area2D9" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(251, -34)
-
-[node name="Area2D10" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(258, -34)
-
-[node name="Area2D11" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(301, -34)
-
-[node name="Area2D12" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(308, -34)
-
-[node name="Area2D13" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(315, -34)
-
-[node name="Area2D14" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(371, -16)
-
-[node name="Area2D15" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(378, -16)
-
-[node name="Area2D16" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(385, -16)
-
-[node name="Area2D17" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(509, -34)
-
-[node name="Area2D18" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(516, -34)
-
-[node name="Area2D19" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(523, -34)
-
-[node name="Area2D20" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(572, -14)
-
-[node name="Area2D21" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(579, -14)
-
-[node name="Area2D22" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(586, -14)
-
-[node name="Area2D23" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(636, -34)
-
-[node name="Area2D24" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(643, -34)
-
-[node name="Area2D25" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(650, -34)
-
-[node name="Area2D26" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(702, -30)
-
-[node name="Area2D27" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(709, -30)
-
-[node name="Area2D28" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(716, -30)
-
-[node name="Area2D29" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(672, -72)
-
-[node name="Area2D30" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(679, -72)
-
-[node name="Area2D31" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(686, -72)
-
-[node name="Area2D32" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(796, -23)
-
-[node name="Area2D33" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(803, -23)
-
-[node name="Area2D34" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(810, -23)
-
-[node name="Area2D35" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(860, 14)
-
-[node name="Area2D36" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(867, 14)
-
-[node name="Area2D37" parent="Node2D" instance=ExtResource("9_lfbnc")]
-position = Vector2(874, 14)
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("11_d8c13")

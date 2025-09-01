@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cebcdfp5e22kr"]
 
 [ext_resource type="Texture2D" uid="uid://c5nli0gayb7re" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Traps/Trap5.png" id="1_12qda"]
-[ext_resource type="Script" uid="uid://tvamkg56gtte" path="res://traps scene/suriken.gd" id="1_86w0f"]
+[ext_resource type="Script" uid="uid://tvamkg56gtte" path="res://Scripts/suriken.gd" id="1_86w0f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86w0f"]
-radius = 20.025
+radius = 16.0312
 
 [sub_resource type="Animation" id="Animation_umc3x"]
 length = 0.001
@@ -44,7 +44,7 @@ _data = {
 &"spine": SubResource("Animation_qftii")
 }
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Suriken" type="Area2D"]
 script = ExtResource("1_86w0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -61,3 +61,5 @@ shape = SubResource("CircleShape2D_86w0f")
 libraries = {
 &"": SubResource("AnimationLibrary_nmucy")
 }
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
