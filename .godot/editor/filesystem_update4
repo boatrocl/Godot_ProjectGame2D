@@ -22,3 +22,8 @@ res://traps scene/suriken.tscn
 res://traps scene/Traps lightning.tscn
 res://Scene/bullet.tscn
 res://Scripts/enemies.gd
+res://Scripts/game_over.gd
+res://Scripts/door.gd
+res://Scripts/level_1.gd
+res://Scene/door.tscn
+res://Scene/Level2.tscn

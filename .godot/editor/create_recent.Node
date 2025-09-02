@@ -1,4 +1,5 @@
 CollisionShape2D
+AnimatedSprite2D
 Area2D
 Panel
 AudioStreamPlayer
@@ -11,5 +12,3 @@ Node2D
 Node
 VBoxContainer
 Control
-TileMap
-TileMapLayer

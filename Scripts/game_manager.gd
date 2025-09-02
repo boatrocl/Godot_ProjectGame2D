@@ -4,6 +4,9 @@ var score : int = 0
 var spawn_point : Vector2
 var player_hp : int = 5
 
+func reset_score():
+	score = 0
+
 func add_score():
 	score += 1
 	print(score)
@@ -24,4 +27,4 @@ func set_player_hp(hp : int):
 		#get_tree().call_deferred("change_scene_to_file", "res://Scene/game_over.tscn")
 
 func load_next_level(next_scene : PackedScene):
-	get_tree().change_scene_to_packed(next_scene)
+	get_tree().call_deferred("change_scene_to_file", str(next_scene))

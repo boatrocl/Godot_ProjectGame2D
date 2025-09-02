@@ -82,7 +82,6 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	print(area)
 	if area.is_in_group("traps"):
 		current_hp -= 1
 		GameManager.set_player_hp(current_hp)
