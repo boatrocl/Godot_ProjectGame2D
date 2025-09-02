@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://di4gy8nx0aek"]
+
+[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="1_j2tsk"]
+[ext_resource type="Script" uid="uid://3rwgsc6nx0u2" path="res://Scene/main_menu.gd" id="1_mda5q"]
+[ext_resource type="Texture2D" uid="uid://bu6pebvl03n55" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/moon.png" id="2_j2tsk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mda5q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2tsk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy022"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mda5q"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_mda5q")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 244.0
+offset_top = 74.0
+offset_right = 909.0
+offset_bottom = 167.0
+theme_override_fonts/font = ExtResource("1_j2tsk")
+theme_override_font_sizes/font_size = 75
+text = "Mission In The Moon "
+
+[node name="Start" type="Button" parent="CanvasLayer"]
+offset_left = 269.0
+offset_top = 245.0
+offset_right = 411.0
+offset_bottom = 316.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_j2tsk")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mda5q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j2tsk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hy022")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mda5q")
+text = "START
+"
+
+[node name="Exit" type="Button" parent="CanvasLayer"]
+offset_left = 269.0
+offset_top = 356.0
+offset_right = 411.0
+offset_bottom = 427.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_j2tsk")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/hover = SubResource("StyleBoxFlat_j2tsk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hy022")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mda5q")
+text = "EXIT
+"
+
+[node name="Moon" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_j2tsk")
+
+[connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
