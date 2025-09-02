@@ -5,6 +5,7 @@ extends CharacterBody2D
 const GRAVITY = 980 
 var screen_size 
 var is_firing : bool
+var is_dead : bool = false
 
 @export var max_hp : int = 5
 var current_hp : int = max_hp
@@ -32,7 +33,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_force
 	
-	move_and_slide()
+	if !is_dead:
+		move_and_slide()
 	
 	#screen size
 	position = position.clamp(Vector2.ZERO, screen_size)
@@ -57,10 +59,10 @@ func _physics_process(delta):
 	
 	
 	#flip Sprite h
-	if velocity.x > 0:
+	if velocity.x > 0 and !is_dead:
 		$AnimatedSprite2D.flip_h = false
 		$FiringPos.position.x = 16.0
-	elif velocity.x < 0:
+	elif velocity.x < 0 and !is_dead:
 		$AnimatedSprite2D.flip_h = true
 		$FiringPos.position.x = -16.0
 
@@ -91,8 +93,10 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 		dead()
 
 func dead():
+	is_dead = true
 	$AnimatedSprite2D.play("die")
 	await get_tree().create_timer(1.0).timeout
+	is_dead = false
 	GameManager.set_player_hp(max_hp)
 	get_tree().call_deferred("change_scene_to_file", "res://Scene/game_over.tscn")
 	print("dead")
