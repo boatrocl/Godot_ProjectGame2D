@@ -19,22 +19,21 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 	# look_at(get_global_mouse_position())
-	if Input.is_action_pressed("shoot") and !is_firing and is_on_floor():
+	if Input.is_action_pressed("shoot") and !is_firing and is_on_floor() and !is_dead:
 		fire()
 	var horizontal_input = 0
-	if Input.is_action_pressed("right"):
+	if Input.is_action_pressed("right") and !is_dead:
 		horizontal_input += 1
-	if Input.is_action_pressed("left"):
+	if Input.is_action_pressed("left") and !is_dead:
 		horizontal_input -= 1
 	
 	velocity.x = horizontal_input * speed
 	
 	#jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and !is_dead:
 		velocity.y = jump_force
 	
-	if !is_dead:
-		move_and_slide()
+	move_and_slide()
 	
 	#screen size
 	position = position.clamp(Vector2.ZERO, screen_size)
