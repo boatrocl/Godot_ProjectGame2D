@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1vsjddqef1bh"]
+
+[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scripts/game_ui.gd" id="1_nopgg"]
+[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="3_d7syt"]
+[ext_resource type="Texture2D" uid="uid://c5bijo20s84uw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Items.png" id="4_w0ukj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7syt"]
+atlas = ExtResource("4_w0ukj")
+region = Rect2(65, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nopgg"]
+atlas = ExtResource("4_w0ukj")
+region = Rect2(97, 0, 15, 15)
+
+[node name="UserInterface" type="CanvasLayer"]
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_nopgg")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hp" type="Control" parent="GameUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="HpTexture1" type="TextureRect" parent="GameUI/Hp"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 49.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_d7syt")
+
+[node name="HpTexture2" type="TextureRect" parent="GameUI/Hp"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 45.0
+offset_top = 6.0
+offset_right = 85.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_d7syt")
+
+[node name="HpTexture3" type="TextureRect" parent="GameUI/Hp"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 80.0
+offset_top = 6.0
+offset_right = 120.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_d7syt")
+
+[node name="HpTexture4" type="TextureRect" parent="GameUI/Hp"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 115.0
+offset_top = 6.0
+offset_right = 155.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_d7syt")
+
+[node name="HpTexture5" type="TextureRect" parent="GameUI/Hp"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 150.0
+offset_top = 6.0
+offset_right = 190.0
+offset_bottom = 46.0
+texture = SubResource("AtlasTexture_d7syt")
+
+[node name="Score" type="Control" parent="GameUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 936.0
+offset_top = 4.0
+offset_right = 976.0
+offset_bottom = 44.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+metadata/_edit_group_ = true
+
+[node name="ScoreTexture" type="TextureRect" parent="GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 46.0
+offset_bottom = 44.0
+texture = SubResource("AtlasTexture_nopgg")
+
+[node name="ScoreLabel" type="Label" parent="GameUI/Score"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 45.0
+offset_top = 12.0
+offset_right = 85.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("3_d7syt")
+theme_override_font_sizes/font_size = 20
+text = "x 3"

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_okb4r"]
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="3_ofck2"]
 [ext_resource type="PackedScene" uid="uid://cebcdfp5e22kr" path="res://traps scene/suriken.tscn" id="4_5tcr1"]
-[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Background_n_details.png" id="4_v4jrf"]
+[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Background_n_details.png" id="4_v4jrf"]
 [ext_resource type="PackedScene" uid="uid://cur017wiqoi5w" path="res://traps scene/Spike.tscn" id="6_fi3jw"]
 [ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="7_v4jrf"]
 [ext_resource type="PackedScene" uid="uid://c3wss5tewdeqx" path="res://Scene/Enemies2.tscn" id="8_fi3jw"]

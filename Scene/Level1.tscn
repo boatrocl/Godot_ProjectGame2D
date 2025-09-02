@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://2dykxithfprb"]
+[gd_scene load_steps=23 format=4 uid="uid://2dykxithfprb"]
 
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_fpa3h"]
 [ext_resource type="Script" uid="uid://kqdax5lsxhkw" path="res://Scripts/level_1.gd" id="1_hjmnv"]
@@ -11,12 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://cebcdfp5e22kr" path="res://traps scene/suriken.tscn" id="9_ofx4i"]
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="10_lfbnc"]
 [ext_resource type="Script" uid="uid://28idr206uuor" path="res://Scripts/game_manager.gd" id="11_d8c13"]
-[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scripts/game_ui.gd" id="12_8m71o"]
-[ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="13_cu1y2"]
-[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="14_xb73i"]
-[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Background_n_details.png" id="15_xj5bp"]
+[ext_resource type="PackedScene" uid="uid://c1vsjddqef1bh" path="res://Scene/user_interface.tscn" id="12_7ynka"]
+[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Background_n_details.png" id="15_xj5bp"]
 [ext_resource type="AudioStream" uid="uid://dlbrkxldl0v6v" path="res://SFX/pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3" id="16_7ynka"]
 [ext_resource type="PackedScene" uid="uid://c8du44sr0qy5b" path="res://Scene/door.tscn" id="17_hjmnv"]
+[ext_resource type="PackedScene" uid="uid://dgkfcp6rxisvt" path="res://Scene/heal_item.tscn" id="17_qblvq"]
 [ext_resource type="PackedScene" uid="uid://gtvmdi44t2oi" path="res://Scene/Level2.tscn" id="18_qblvq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
@@ -426,13 +425,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lmyl5")
 sources/1 = SubResource("TileSetAtlasSource_mlbie")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cu1y2"]
-atlas = ExtResource("13_cu1y2")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="LabelSettings" id="LabelSettings_xj5bp"]
-font = ExtResource("14_xb73i")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ynka"]
 texture = ExtResource("15_xj5bp")
 0:0/0 = 0
@@ -797,55 +789,7 @@ position = Vector2(362, 394)
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("11_d8c13")
 
-[node name="UserInterface" type="CanvasLayer" parent="."]
-
-[node name="GameUI" type="Control" parent="UserInterface"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("12_8m71o")
-metadata/_edit_use_anchors_ = true
-
-[node name="Score" type="Control" parent="UserInterface/GameUI"]
-unique_name_in_owner = true
-layout_mode = 1
-anchor_left = 0.375
-anchor_top = 7.275
-anchor_right = 0.375
-anchor_bottom = 7.275
-offset_left = -34.0
-offset_top = -305.0
-offset_right = -15.0
-offset_bottom = -291.0
-metadata/_edit_use_anchors_ = true
-
-[node name="ScoreTexture" type="TextureRect" parent="UserInterface/GameUI/Score"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-offset_left = 917.0
-offset_top = 11.0
-offset_right = 933.0
-offset_bottom = 27.0
-scale = Vector2(6, 6)
-texture = SubResource("AtlasTexture_cu1y2")
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="ScoreLabel" type="Label" parent="UserInterface/GameUI/Score"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-offset_left = 1010.0
-offset_top = 26.0
-offset_right = 1033.0
-offset_bottom = 75.0
-scale = Vector2(3, 3)
-text = "x 3
-"
-label_settings = SubResource("LabelSettings_xj5bp")
-metadata/_edit_use_anchors_ = true
+[node name="UserInterface" parent="." instance=ExtResource("12_7ynka")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -3
@@ -859,3 +803,8 @@ parameters/looping = true
 [node name="Door" parent="." instance=ExtResource("17_hjmnv")]
 position = Vector2(45, 380)
 next_scene = ExtResource("18_qblvq")
+
+[node name="HealItem" type="Node2D" parent="."]
+
+[node name="HealItem2" parent="." instance=ExtResource("17_qblvq")]
+position = Vector2(401, 361)

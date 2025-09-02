@@ -86,7 +86,12 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	if area.is_in_group("traps"):
 		current_hp -= 1
 		GameManager.set_player_hp(current_hp)
-		print("current hp " + str(current_hp))
+		#print("current hp " + str(current_hp))
+	
+	if area.is_in_group("heal"):
+		if current_hp < 5:
+			current_hp += 1
+			GameManager.set_player_hp(current_hp)
 	
 	if current_hp <= 0:
 		dead()
