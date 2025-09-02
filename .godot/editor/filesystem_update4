@@ -17,3 +17,5 @@ res://Scripts/game_ui.gd
 res://Scene/heal_item.tscn
 res://Scripts/heal_item.gd
 res://Scripts/Player.gd
+res://README.md
+res://Scripts/door.gd

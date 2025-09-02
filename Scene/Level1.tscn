@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://2dykxithfprb"]
+[gd_scene load_steps=22 format=4 uid="uid://2dykxithfprb"]
 
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_fpa3h"]
 [ext_resource type="Script" uid="uid://kqdax5lsxhkw" path="res://Scripts/level_1.gd" id="1_hjmnv"]
@@ -16,7 +16,6 @@
 [ext_resource type="AudioStream" uid="uid://dlbrkxldl0v6v" path="res://SFX/pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3" id="16_7ynka"]
 [ext_resource type="PackedScene" uid="uid://c8du44sr0qy5b" path="res://Scene/door.tscn" id="17_hjmnv"]
 [ext_resource type="PackedScene" uid="uid://dgkfcp6rxisvt" path="res://Scene/heal_item.tscn" id="17_qblvq"]
-[ext_resource type="PackedScene" uid="uid://gtvmdi44t2oi" path="res://Scene/Level2.tscn" id="18_qblvq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]
 texture = ExtResource("2_ofx4i")
@@ -802,9 +801,9 @@ parameters/looping = true
 
 [node name="Door" parent="." instance=ExtResource("17_hjmnv")]
 position = Vector2(45, 380)
-next_scene = ExtResource("18_qblvq")
+next_scene = "res://Scene/Level2.tscn"
 
 [node name="HealItem" type="Node2D" parent="."]
 
-[node name="HealItem2" parent="." instance=ExtResource("17_qblvq")]
+[node name="HealItem2" parent="HealItem" instance=ExtResource("17_qblvq")]
 position = Vector2(401, 361)
