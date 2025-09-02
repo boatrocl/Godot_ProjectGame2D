@@ -6,6 +6,7 @@ extends Area2D
 
 var time_passed = 0
 var initial_position := Vector2.ZERO
+var collected : bool = false
 
 func _ready():
 	initial_position = position
@@ -24,7 +25,8 @@ func coin_hover(delta):
 
 # Coin collected
 func _on_body_entered(body):
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and !collected:
+		collected = true
 		$AudioStreamPlayer.play()
 		GameManager.add_score()
 		var tween = create_tween()

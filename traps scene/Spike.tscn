@@ -44,7 +44,7 @@ _data = {
 &"RESET": SubResource("Animation_hyxtm")
 }
 
-[node name="Spike" type="Area2D"]
+[node name="Spike" type="Area2D" groups=["traps"]]
 position = Vector2(77, 63)
 script = ExtResource("1_itigj")
 

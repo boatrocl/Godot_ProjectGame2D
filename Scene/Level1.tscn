@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scripts/game_ui.gd" id="12_8m71o"]
 [ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="13_cu1y2"]
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="14_xb73i"]
-[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Background_n_details.png" id="15_xj5bp"]
+[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Background_n_details.png" id="15_xj5bp"]
 [ext_resource type="AudioStream" uid="uid://dlbrkxldl0v6v" path="res://SFX/pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3" id="16_7ynka"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmyl5"]

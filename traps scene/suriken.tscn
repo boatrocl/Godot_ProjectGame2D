@@ -44,7 +44,7 @@ _data = {
 &"spine": SubResource("Animation_qftii")
 }
 
-[node name="Suriken" type="Area2D"]
+[node name="Suriken" type="Area2D" groups=["traps"]]
 script = ExtResource("1_86w0f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

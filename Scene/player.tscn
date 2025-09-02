@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bn65le7icy0js"]
+[gd_scene load_steps=44 format=3 uid="uid://bn65le7icy0js"]
 
 [ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
 [ext_resource type="Script" uid="uid://cnkl1ydo8yhq1" path="res://Scripts/Player.gd" id="1_esnew"]
@@ -299,6 +299,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y8w33"]
 size = Vector2(16, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xa75v"]
+size = Vector2(18, 26)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_esnew")
 
@@ -324,4 +327,12 @@ one_shot = true
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_xa75v")
 
+[node name="HurtBox" type="Area2D" parent="."]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_xa75v")
+
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

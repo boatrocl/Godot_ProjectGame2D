@@ -69,7 +69,7 @@ _data = {
 &"RESET": SubResource("Animation_ybuu7")
 }
 
-[node name="Fire Traps" type="Area2D"]
+[node name="Fire Traps" type="Area2D" groups=["traps"]]
 script = ExtResource("1_bnrox")
 
 [node name="Trap2" type="Sprite2D" parent="."]
@@ -88,5 +88,3 @@ libraries = {
 &"": SubResource("AnimationLibrary_o17e7")
 }
 script = ExtResource("2_aleqd")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

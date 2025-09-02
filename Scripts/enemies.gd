@@ -33,7 +33,7 @@ func _on_bullet_timer_timeout() -> void:
 
 func fire():
 	var bullet = bullet_path.instantiate()
-	bullet.add_to_group("player_bullet")
+	bullet.get_node("BulletHitbox").add_to_group("traps")
 	if $AnimatedSprite2D.flip_h == false:
 		bullet.rota = deg_to_rad(0)
 	elif $AnimatedSprite2D.flip_h == true:

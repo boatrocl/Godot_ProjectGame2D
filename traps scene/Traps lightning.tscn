@@ -68,7 +68,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nopfa"]
 size = Vector2(13.25, 60)
 
-[node name="TrapLighting" type="Area2D"]
+[node name="TrapLighting" type="Area2D" groups=["traps"]]
 script = ExtResource("1_0mfeu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

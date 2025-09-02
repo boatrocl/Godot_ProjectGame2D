@@ -44,10 +44,10 @@ sprite_frames = SubResource("SpriteFrames_w63l4")
 animation = &"shoot"
 frame_progress = 0.45563
 
-[node name="Area2D" type="Area2D" parent="."]
-collision_layer = 0
+[node name="BulletHitbox" type="Area2D" parent="."]
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletHitbox"]
 shape = SubResource("RectangleShape2D_k7h5k")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BulletHitbox" to="." method="_on_area_2d_body_entered"]

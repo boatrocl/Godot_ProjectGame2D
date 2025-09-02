@@ -5,9 +5,13 @@ extends CharacterBody2D
 const GRAVITY = 980 
 var screen_size 
 var is_firing : bool
+
+@export var max_hp : int = 5
+var current_hp : int = max_hp
 #signal item_collected(amount)
 var bullet_path=preload("res://Scene/bullet.tscn")
 func _ready():
+	GameManager.set_player_hp(current_hp)
 	screen_size = get_viewport_rect().size
 	
 func _physics_process(delta):
@@ -34,7 +38,7 @@ func _physics_process(delta):
 	position = position.clamp(Vector2.ZERO, screen_size)
 	
 	#animation
-	if is_on_floor():
+	if is_on_floor() and current_hp > 0:
 		if abs(velocity.x) > 0:
 			if is_firing == false:
 				$AnimatedSprite2D.animation = "run"
@@ -47,9 +51,10 @@ func _physics_process(delta):
 				$AnimatedSprite2D.play()
 			else:
 				$AnimatedSprite2D.play("attack")
-	else:
+	elif current_hp > 0:
 		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.play()
+	
 	
 	#flip Sprite h
 	if velocity.x > 0:
@@ -58,6 +63,7 @@ func _physics_process(delta):
 	elif velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 		$FiringPos.position.x = -16.0
+
 func fire():
 	is_firing = true
 	$AttackTimer.start()
@@ -70,5 +76,24 @@ func fire():
 	bullet.pos = $FiringPos.global_position
 	get_parent().add_child(bullet)
 	$ShootSound.play()
+
 func _on_attack_timer_timeout() -> void:
 	is_firing = false
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	print(area)
+	if area.is_in_group("traps"):
+		current_hp -= 1
+		GameManager.set_player_hp(current_hp)
+		print("current hp " + str(current_hp))
+	
+	if current_hp <= 0:
+		dead()
+
+func dead():
+	$AnimatedSprite2D.play("die")
+	await get_tree().create_timer(1.0).timeout
+	GameManager.set_player_hp(max_hp)
+	get_tree().call_deferred("change_scene_to_file", "res://Scene/game_over.tscn")
+	print("dead")
