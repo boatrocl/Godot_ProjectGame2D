@@ -69,6 +69,7 @@ func fire():
 		bullet.rota = deg_to_rad(180)
 	bullet.pos = $FiringPos.global_position
 	get_parent().add_child(bullet)
+	$ShootSound.play()
 
 func _on_attack_timer_timeout() -> void:
 	is_firing = false

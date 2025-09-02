@@ -1,0 +1,18 @@
+res://Scene/player.tscn
+res://Scene/bullet.tscn
+res://Scene/Enemies.tscn
+res://Scene/Enemies2.tscn
+res://traps scene/Traps lightning.tscn
+res://traps scene/Spike.tscn
+res://traps scene/suriken.tscn
+res://traps scene/Fire Traps.tscn
+res://Scene/Level1.tscn
+res://Scene/Level2.tscn
+res://Scene/Level3.1.tscn
+res://Scene/Coin.tscn
+res://Scene/Main Menu.tscn
+res://Scripts/coin.gd
+res://Scene/main_menu.gd
+res://Scripts/Player.gd
+res://Scene/level_1.gd
+res://Scripts/bullet.gd

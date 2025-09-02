@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://di4gy8nx0aek"]
+[gd_scene load_steps=9 format=3 uid="uid://di4gy8nx0aek"]
 
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="1_j2tsk"]
 [ext_resource type="Script" uid="uid://3rwgsc6nx0u2" path="res://Scene/main_menu.gd" id="1_mda5q"]
 [ext_resource type="Texture2D" uid="uid://bu6pebvl03n55" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/moon.png" id="2_j2tsk"]
+[ext_resource type="AudioStream" uid="uid://cleyhtyimylr7" path="res://SFX/8-bit-console-from-my-childhood-301286.mp3" id="4_hy022"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mda5q"]
 
@@ -64,6 +65,10 @@ text = "EXIT
 [node name="Moon" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
 texture = ExtResource("2_j2tsk")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_hy022")
+parameters/looping = true
 
 [connection signal="pressed" from="CanvasLayer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

@@ -25,9 +25,10 @@ func coin_hover(delta):
 # Coin collected
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		#AudioManager.coin_pickup_sfx.play()
+		$AudioStreamPlayer.play()
 		GameManager.add_score()
 		var tween = create_tween()
 		tween.tween_property(self, "scale", Vector2.ZERO, 0.1)
 		await tween.finished
+		await $AudioStreamPlayer.finished
 		queue_free()

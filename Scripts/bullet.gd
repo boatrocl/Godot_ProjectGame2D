@@ -20,6 +20,6 @@ func _on_area_2d_body_entered(body:Node2D):
 		queue_free()
 	if body.is_in_group("player"):
 		print("You dead")
-		queue_free()
+		body.queue_free()
 	if body.is_in_group("tilemap_colision"):
 		queue_free()

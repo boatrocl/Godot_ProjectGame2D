@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://bn65le7icy0js"]
+[gd_scene load_steps=37 format=3 uid="uid://bn65le7icy0js"]
 
 [ext_resource type="Texture2D" uid="uid://brg7r2j2ol4qw" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Main_Characters/Char_Robot.png" id="1_8cr6n"]
 [ext_resource type="Script" uid="uid://cnkl1ydo8yhq1" path="res://Scripts/Player.gd" id="1_esnew"]
+[ext_resource type="AudioStream" uid="uid://b5xc5dbc4413t" path="res://SFX/ShotSFX.mp3" id="3_xa75v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c31lq"]
 atlas = ExtResource("1_8cr6n")
@@ -271,5 +272,8 @@ position = Vector2(15, -4)
 [node name="AttackTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xa75v")
 
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
