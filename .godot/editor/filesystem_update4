@@ -1,29 +1,14 @@
+res://traps scene/Spike.tscn
 res://Scene/Main Menu.tscn
 res://Scene/game_over.tscn
 res://Scene/Level1.tscn
-res://Scene/player.tscn
+res://Scene/Level2.tscn
 res://Scene/Level3.1.tscn
+res://Scene/player.tscn
 res://Scene/Enemies.tscn
 res://Scene/Enemies2.tscn
 res://Scene/Coin.tscn
 res://Scene/node_2d.tscn
-res://default_bus_layout.tres
-res://Scripts/bullet.gd
-res://Scripts/fire_traps.gd
-res://Scripts/spike.gd
-res://Scripts/suriken.gd
-res://Scripts/traps_lightning.gd
-res://Scripts/coin.gd
-res://Scripts/game_manager.gd
-res://Scripts/Player.gd
-res://traps scene/Fire Traps.tscn
-res://traps scene/Spike.tscn
-res://traps scene/suriken.tscn
-res://traps scene/Traps lightning.tscn
 res://Scene/bullet.tscn
-res://Scripts/enemies.gd
-res://Scripts/game_over.gd
-res://Scripts/door.gd
-res://Scripts/level_1.gd
 res://Scene/door.tscn
-res://Scene/Level2.tscn
+res://traps scene/Fire Traps.tscn
