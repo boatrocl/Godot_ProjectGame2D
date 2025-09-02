@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="10_lfbnc"]
 [ext_resource type="Script" uid="uid://28idr206uuor" path="res://Scripts/game_manager.gd" id="11_d8c13"]
 [ext_resource type="PackedScene" uid="uid://c1vsjddqef1bh" path="res://Scene/user_interface.tscn" id="12_7ynka"]
-[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Background_n_details.png" id="15_xj5bp"]
+[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Background_n_details.png" id="15_xj5bp"]
 [ext_resource type="AudioStream" uid="uid://dlbrkxldl0v6v" path="res://SFX/pixel-fight-8-bit-arcade-music-background-music-for-video-208775.mp3" id="16_7ynka"]
 [ext_resource type="PackedScene" uid="uid://c8du44sr0qy5b" path="res://Scene/door.tscn" id="17_hjmnv"]
 [ext_resource type="PackedScene" uid="uid://dgkfcp6rxisvt" path="res://Scene/heal_item.tscn" id="17_qblvq"]

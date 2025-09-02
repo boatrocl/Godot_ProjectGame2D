@@ -10,14 +10,8 @@ res://Scene/Coin.tscn
 res://Scene/node_2d.tscn
 res://Scene/bullet.tscn
 res://Scene/door.tscn
-res://traps scene/Fire Traps.tscn
-res://traps scene/Spike.tscn
 res://Scene/user_interface.tscn
-res://Scripts/game_ui.gd
 res://Scene/heal_item.tscn
-res://Scripts/heal_item.gd
-res://Scripts/Player.gd
-res://README.md
-res://Scripts/door.gd
-res://Scripts/game_manager.gd
 res://traps scene/suriken.tscn
+res://Scripts/enemies.gd
+res://Scripts/game_manager.gd

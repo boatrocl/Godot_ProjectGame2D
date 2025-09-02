@@ -101,10 +101,17 @@ wait_time = 0.5
 [node name="FiringPos" type="Marker2D" parent="."]
 position = Vector2(-16, -19)
 
+[node name="FiringPos2" type="Marker2D" parent="."]
+position = Vector2(21, -20)
+
 [node name="PlayerDetectionArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea"]
 position = Vector2(-89.75, -14)
+shape = SubResource("RectangleShape2D_u6np6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDetectionArea"]
+position = Vector2(91, -14)
 shape = SubResource("RectangleShape2D_u6np6")
 
 [connection signal="timeout" from="BulletTimer" to="." method="_on_bullet_timer_timeout"]

@@ -20,8 +20,15 @@ func _process(delta: float) -> void:
 
 func _on_player_detection_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		# Flip enemy to face player
+		if body.global_position.x < global_position.x:
+			$AnimatedSprite2D.flip_h = true
+		else:
+			$AnimatedSprite2D.flip_h = false
+
 		$AnimatedSprite2D.play("attack")
 		$BulletTimer.start()
+
 
 func _on_player_detection_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -35,8 +42,10 @@ func fire():
 	var bullet = bullet_path.instantiate()
 	bullet.get_node("BulletHitbox").add_to_group("traps")
 	if $AnimatedSprite2D.flip_h == false:
-		bullet.rota = deg_to_rad(0)
+		bullet.rotation = deg_to_rad(0)
+		bullet.pos = $FiringPos2.global_position
 	elif $AnimatedSprite2D.flip_h == true:
 		bullet.rota = deg_to_rad(180)
-	bullet.pos = $FiringPos.global_position
+		bullet.pos = $FiringPos.global_position
+	#bullet.pos = $FiringPos.global_position
 	get_parent().add_child(bullet)
