@@ -9,7 +9,7 @@ func reset_score():
 
 func add_score():
 	score += 1
-	print(score)
+	#print(score)
 
 func set_spawn_point(spawn_pos : Vector2):
 	spawn_point = spawn_pos

@@ -103,4 +103,4 @@ func dead():
 	is_dead = false
 	GameManager.set_player_hp(max_hp)
 	get_tree().call_deferred("change_scene_to_file", "res://Scene/game_over.tscn")
-	print("dead")
+	#print("dead")

@@ -785,6 +785,11 @@ position = Vector2(184, 424)
 [node name="CharacterBody2D3" parent="Enemies" instance=ExtResource("8_xj5bp")]
 position = Vector2(362, 394)
 
+[node name="HealItem" type="Node2D" parent="."]
+
+[node name="HealItem2" parent="HealItem" instance=ExtResource("17_qblvq")]
+position = Vector2(401, 361)
+
 [node name="GameManager" type="Node2D" parent="."]
 script = ExtResource("11_d8c13")
 
@@ -802,8 +807,3 @@ parameters/looping = true
 [node name="Door" parent="." instance=ExtResource("17_hjmnv")]
 position = Vector2(45, 380)
 next_scene = "res://Scene/Level2.tscn"
-
-[node name="HealItem" type="Node2D" parent="."]
-
-[node name="HealItem2" parent="HealItem" instance=ExtResource("17_qblvq")]
-position = Vector2(401, 361)
