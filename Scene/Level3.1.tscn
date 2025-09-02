@@ -265,9 +265,10 @@ sources/0 = SubResource("TileSetAtlasSource_20oq0")
 [node name="Level3" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("5_uiwp8")]
-position = Vector2(36, 610)
+position = Vector2(834, 187)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(2, -1)
 zoom = Vector2(3, 3)
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." groups=["tilemap_colision"]]
@@ -897,3 +898,4 @@ position = Vector2(832, 182)
 
 [node name="Rocket" parent="." instance=ExtResource("12_2haq7")]
 position = Vector2(1118, 198)
+next_scene = "res://Scene/Win.tscn"

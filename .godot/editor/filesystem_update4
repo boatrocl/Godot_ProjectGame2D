@@ -1,8 +1,8 @@
+res://Scene/Level3.1.tscn
 res://Scene/Main Menu.tscn
 res://Scene/game_over.tscn
 res://Scene/Level1.tscn
 res://Scene/Level2.tscn
-res://Scene/Level3.1.tscn
 res://Scene/player.tscn
 res://Scene/Enemies.tscn
 res://Scene/Enemies2.tscn
@@ -13,5 +13,8 @@ res://Scene/door.tscn
 res://Scene/user_interface.tscn
 res://Scene/heal_item.tscn
 res://traps scene/suriken.tscn
-res://Scripts/enemies.gd
 res://Scene/rocket.tscn
+res://Scene/Win.tscn
+res://Scene/win.gd
+res://Scripts/Player.gd
+res://Scripts/door.gd

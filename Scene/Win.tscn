@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqx3vb34vpobn"]
+[gd_scene load_steps=7 format=3 uid="uid://bqx3vb34vpobn"]
 
-[ext_resource type="Texture2D" uid="uid://bc7v66sgbs507" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/win.png" id="1_drag3"]
+[ext_resource type="Script" uid="uid://62qj0rmsc30n" path="res://Scene/win.gd" id="1_58yip"]
+[ext_resource type="Texture2D" uid="uid://cg5tr7wqqr6li" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/ไม่มีชื่อ (1152 x 648 px).png" id="1_kx1dy"]
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="2_kx1dy"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_58yip"]
-bg_color = Color(0.74902, 0.74902, 0.74902, 0.333333)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58yip"]
+texture = ExtResource("1_kx1dy")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y8owf"]
 bg_color = Color(1, 1, 1, 1)
@@ -19,46 +20,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_58yip")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 672.0
-color = Color(0.364706, 0.364706, 0.364706, 1)
+offset_right = 1154.0
+offset_bottom = 654.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_58yip")
 
-[node name="Win" type="Sprite2D" parent="ColorRect"]
-position = Vector2(576, 337)
-scale = Vector2(1.00521, 1.04012)
-texture = ExtResource("1_drag3")
-
-[node name="Panel" type="Panel" parent="ColorRect/Win"]
-offset_left = -400.848
-offset_top = -202.861
-offset_right = 449.152
-offset_bottom = 165.139
-theme_override_styles/panel = SubResource("StyleBoxFlat_58yip")
-
-[node name="Vic" type="Label" parent="ColorRect"]
+[node name="Vic" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 509.0
-offset_top = 121.0
-offset_right = 716.0
-offset_bottom = 262.0
+offset_left = 496.0
+offset_top = 118.0
+offset_right = 703.0
+offset_bottom = 259.0
 theme_override_fonts/font = ExtResource("2_kx1dy")
 theme_override_font_sizes/font_size = 50
 text = "VICTORY
 "
 
-[node name="Score" type="Label" parent="ColorRect"]
+[node name="Score" type="Label" parent="Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -53.0
+offset_left = -52.0
 offset_top = -78.0
-offset_right = 93.0
+offset_right = 94.0
 offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -68,7 +59,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_y8owf")
 text = "Score:9999"
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Newgame" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 362.0
 offset_top = 376.0
@@ -80,15 +71,18 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_kx1dy")
 text = "New game"
 
-[node name="Button2" type="Button" parent="ColorRect"]
+[node name="Menu" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 673.0
-offset_top = 374.0
-offset_right = 809.0
-offset_bottom = 420.0
+offset_left = 670.0
+offset_top = 376.0
+offset_right = 806.0
+offset_bottom = 422.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_kx1dy")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_kx1dy")
 text = "Menu
 "
+
+[connection signal="pressed" from="Panel/Newgame" to="." method="_on_newgame_pressed"]
+[connection signal="pressed" from="Panel/Menu" to="." method="_on_menu_pressed"]
