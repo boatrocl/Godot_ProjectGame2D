@@ -1,3 +1,4 @@
+Panel
 AudioStreamPlayer
 AudioStreamPlayer2D
 Button
@@ -7,7 +8,6 @@ CanvasLayer
 Node2D
 Node
 VBoxContainer
-Panel
 Control
 TileMap
 TileMapLayer

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dp3swfmyxy2s1"]
+[gd_scene load_steps=8 format=3 uid="uid://dp3swfmyxy2s1"]
 
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="1_iosw2"]
+[ext_resource type="Texture2D" uid="uid://c3rqyribmuj61" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/over.png" id="1_lwxdm"]
+[ext_resource type="Script" uid="uid://b6f6epgpec8tg" path="res://Scripts/game_over.gd" id="1_mjsgh"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgjh7"]
-bg_color = Color(0.662452, 0.662452, 0.662452, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnpu1"]
+texture = ExtResource("1_lwxdm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mjsgh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iosw2"]
 bg_color = Color(1, 1, 1, 1)
@@ -18,21 +22,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mjsgh")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
-offset_right = 1147.0
+offset_right = 1158.0
 offset_bottom = 656.0
-color = Color(0.362829, 0.36283, 0.362829, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_xnpu1")
 
 [node name="Panel" type="Panel" parent="ColorRect"]
 layout_mode = 0
 offset_top = 120.0
 offset_right = 1143.0
 offset_bottom = 529.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qgjh7")
+theme_override_styles/panel = SubResource("StyleBoxTexture_mjsgh")
 
 [node name="Label" type="Label" parent="ColorRect/Panel"]
 layout_mode = 1
@@ -47,7 +52,8 @@ theme_override_fonts/font = ExtResource("1_iosw2")
 theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
 
-[node name="Label2" type="Label" parent="ColorRect/Panel"]
+[node name="ScoreLabel" type="Label" parent="ColorRect/Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

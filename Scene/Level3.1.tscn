@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="7_4q1hu"]
 [ext_resource type="PackedScene" uid="uid://c3wss5tewdeqx" path="res://Scene/Enemies2.tscn" id="8_dc2c1"]
 [ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="10_moy44"]
-[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scene/game_ui.gd" id="11_nh8bw"]
+[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scripts/game_ui.gd" id="11_nh8bw"]
 [ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="12_2haq7"]
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="13_gg2bf"]
 [ext_resource type="Texture2D" uid="uid://cxe44x63wealy" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Space-removebg-preview.png" id="13_uiwp8"]

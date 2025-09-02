@@ -20,6 +20,8 @@ func _on_area_2d_body_entered(body:Node2D):
 		queue_free()
 	if body.is_in_group("player"):
 		print("You dead")
-		body.queue_free()
+		GameManager.take_damage()
+		#body.queue_free()
+		#get_tree().change_scene_to_file("res://Scene/game_over.tscn")
 	if body.is_in_group("tilemap_colision"):
 		queue_free()

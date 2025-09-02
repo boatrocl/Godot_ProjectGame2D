@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c3wss5tewdeqx" path="res://Scene/Enemies2.tscn" id="8_fi3jw"]
 [ext_resource type="Texture2D" uid="uid://dmt1lhf8i0hgb" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="9_v4jrf"]
 [ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="10_jxtda"]
-[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scene/game_ui.gd" id="11_tjvjx"]
+[ext_resource type="Script" uid="uid://cfkfwbl36o21j" path="res://Scripts/game_ui.gd" id="11_tjvjx"]
 [ext_resource type="Texture2D" uid="uid://cri7e8etul2xq" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/GUI/Icons.png" id="12_7mi2m"]
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="13_7mi2m"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4]
+[gd_scene load_steps=13 format=4 uid="uid://dmolkys75hqho"]
 
 [ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="1_fl6pg"]
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="2_scbqh"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="7_libew"]
 [ext_resource type="PackedScene" uid="uid://c3wss5tewdeqx" path="res://Scene/Enemies2.tscn" id="8_1n0yv"]
 [ext_resource type="Texture2D" uid="uid://dmt1lhf8i0hgb" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Objects/Door.png" id="9_1n0yv"]
-[ext_resource type="PackedScene" path="res://Scene/Coin.tscn" id="10_b1ea7"]
+[ext_resource type="PackedScene" uid="uid://jo8oyxkxxr08" path="res://Scene/Coin.tscn" id="10_b1ea7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_20oq0"]
 texture = ExtResource("1_fl6pg")
