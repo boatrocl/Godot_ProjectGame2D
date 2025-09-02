@@ -14,4 +14,4 @@ res://Scene/user_interface.tscn
 res://Scene/heal_item.tscn
 res://traps scene/suriken.tscn
 res://Scripts/enemies.gd
-res://Scripts/game_manager.gd
+res://Scene/rocket.tscn

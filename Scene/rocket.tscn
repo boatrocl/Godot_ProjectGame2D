@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8rlxft7i77f4"]
+
+[ext_resource type="Texture2D" uid="uid://cxe44x63wealy" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Space-removebg-preview.png" id="1_6i7ar"]
+[ext_resource type="Script" uid="uid://dnmv2g5iin35g" path="res://Scripts/door.gd" id="1_ymx8p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymx8p"]
+size = Vector2(17, 40)
+
+[node name="Rocket" type="Area2D"]
+script = ExtResource("1_ymx8p")
+
+[node name="Space-removebg-preview" type="Sprite2D" parent="."]
+position = Vector2(1, -12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_6i7ar")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_ymx8p")
