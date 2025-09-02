@@ -1,0 +1,99 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="1_vw8s2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpdw1"]
+bg_color = Color(0.442911, 0.442911, 0.442911, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2akib"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkk8s"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 651.0
+color = Color(0.0605303, 0.0605303, 0.0605303, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_top = 190.0
+offset_right = 1153.0
+offset_bottom = 511.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpdw1")
+
+[node name="Button" type="Button" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -167.5
+offset_top = -123.0
+offset_right = -48.5
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_vw8s2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2akib")
+text = "Restart
+"
+
+[node name="Button2" type="Button" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 63.5
+offset_top = -123.0
+offset_right = 182.5
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_vw8s2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_tkk8s")
+text = "Exit"
+
+[node name="Game Over" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -116.5
+offset_top = 19.0
+offset_right = 129.5
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_vw8s2")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="Score" type="Label" parent="ColorRect/Panel"]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 92.0
+offset_right = 662.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("1_vw8s2")
+theme_override_font_sizes/font_size = 30
+text = "Score:9999
+"

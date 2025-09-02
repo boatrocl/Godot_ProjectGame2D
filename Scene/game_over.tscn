@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp3swfmyxy2s1"]
+
+[ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="1_iosw2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgjh7"]
+bg_color = Color(0.662452, 0.662452, 0.662452, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iosw2"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwxdm"]
+bg_color = Color(0.99558, 0.99558, 0.99558, 1)
+
+[node name="Game Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1147.0
+offset_bottom = 656.0
+color = Color(0.362829, 0.36283, 0.362829, 1)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 0
+offset_top = 120.0
+offset_right = 1143.0
+offset_bottom = 529.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qgjh7")
+
+[node name="Label" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_right = 123.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_iosw2")
+theme_override_font_sizes/font_size = 50
+text = "GAME OVER"
+
+[node name="Label2" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.0
+offset_top = -71.5
+offset_right = 69.0
+offset_bottom = -33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iosw2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_iosw2")
+text = "Score:9999"
+
+[node name="Restart" type="Button" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.5
+offset_top = -145.0
+offset_right = -66.5
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iosw2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_lwxdm")
+text = "Restart"
+
+[node name="Menu" type="Button" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 75.5
+offset_top = -146.0
+offset_right = 168.5
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_iosw2")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_lwxdm")
+text = "Menu
+"
