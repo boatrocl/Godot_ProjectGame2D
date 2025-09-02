@@ -20,3 +20,4 @@ res://Scripts/Player.gd
 res://README.md
 res://Scripts/door.gd
 res://Scripts/game_manager.gd
+res://traps scene/suriken.tscn

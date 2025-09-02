@@ -22,6 +22,7 @@ GameManager="*res://Scripts/game_manager.gd"
 [global_group]
 
 traps=""
+enemies=""
 
 [input]
 
