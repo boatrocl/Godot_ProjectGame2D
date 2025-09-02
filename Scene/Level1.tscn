@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://2dykxithfprb"]
 
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_fpa3h"]
-[ext_resource type="Script" uid="uid://kqdax5lsxhkw" path="res://Scripts/level_1.gd" id="1_hjmnv"]
+[ext_resource type="Script" uid="uid://kqdax5lsxhkw" path="res://Scripts/level_music.gd" id="1_hjmnv"]
 [ext_resource type="PackedScene" uid="uid://ex7os1e74mg5" path="res://traps scene/Traps lightning.tscn" id="1_ofx4i"]
 [ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="2_ofx4i"]
 [ext_resource type="Texture2D" uid="uid://xapcg7duxdbx" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset_details.png" id="3_lfbnc"]

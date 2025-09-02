@@ -1,11 +1,12 @@
-[gd_scene load_steps=19 format=4 uid="uid://gtvmdi44t2oi"]
+[gd_scene load_steps=21 format=4 uid="uid://gtvmdi44t2oi"]
 
+[ext_resource type="Script" uid="uid://kqdax5lsxhkw" path="res://Scripts/level_music.gd" id="1_c7y8q"]
 [ext_resource type="Texture2D" uid="uid://cgiuhsq8ale6a" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Tileset.png" id="1_hpk84"]
 [ext_resource type="PackedScene" uid="uid://bn65le7icy0js" path="res://Scene/player.tscn" id="1_okb4r"]
 [ext_resource type="PackedScene" uid="uid://cnpwj1udp6ojw" path="res://traps scene/Fire Traps.tscn" id="3_ofck2"]
 [ext_resource type="PackedScene" uid="uid://cebcdfp5e22kr" path="res://traps scene/suriken.tscn" id="4_5tcr1"]
 [ext_resource type="PackedScene" uid="uid://ex7os1e74mg5" path="res://traps scene/Traps lightning.tscn" id="4_7mi2m"]
-[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Background_n_details.png" id="4_v4jrf"]
+[ext_resource type="Texture2D" uid="uid://5y7mrj0qtma1" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/Tileset/Background_n_details.png" id="4_v4jrf"]
 [ext_resource type="PackedScene" uid="uid://cur017wiqoi5w" path="res://traps scene/Spike.tscn" id="6_fi3jw"]
 [ext_resource type="PackedScene" uid="uid://dt8gt5s4ywy0r" path="res://Scene/Enemies.tscn" id="7_v4jrf"]
 [ext_resource type="PackedScene" uid="uid://c3wss5tewdeqx" path="res://Scene/Enemies2.tscn" id="8_fi3jw"]
@@ -13,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://c1vsjddqef1bh" path="res://Scene/user_interface.tscn" id="11_ojnd5"]
 [ext_resource type="PackedScene" uid="uid://c8du44sr0qy5b" path="res://Scene/door.tscn" id="13_7mi2m"]
 [ext_resource type="PackedScene" uid="uid://dgkfcp6rxisvt" path="res://Scene/heal_item.tscn" id="13_c51k5"]
+[ext_resource type="AudioStream" uid="uid://dgnm1srq1hb3k" path="res://SFX/BGM-UpBeat.mp3" id="15_2ddut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v4jrf"]
 texture = ExtResource("1_hpk84")
@@ -584,6 +586,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7mi2m")
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_c7y8q")
 
 [node name="Player" parent="." instance=ExtResource("1_okb4r")]
 position = Vector2(68, 454)
@@ -1019,3 +1022,7 @@ metadata/_edit_lock_ = true
 [node name="Door" parent="." instance=ExtResource("13_7mi2m")]
 position = Vector2(50, 214)
 next_scene = "res://Scene/Level3.1.tscn"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_2ddut")
+parameters/looping = true

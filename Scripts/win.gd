@@ -2,6 +2,10 @@ extends Control
 
 #@onready var score_texture = %Score/ScoreTexture
 @onready var score_label = $Panel/Score
+@onready var victory_sound = $AudioStreamPlayer
+
+func _ready() -> void:
+	victory_sound.play()
 
 func _process(_delta):
 	# Set the score label text to the score variable in game maanger script

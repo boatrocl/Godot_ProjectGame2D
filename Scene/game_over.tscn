@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp3swfmyxy2s1"]
+[gd_scene load_steps=9 format=3 uid="uid://dp3swfmyxy2s1"]
 
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="1_iosw2"]
 [ext_resource type="Texture2D" uid="uid://c3rqyribmuj61" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/over.png" id="1_lwxdm"]
 [ext_resource type="Script" uid="uid://b6f6epgpec8tg" path="res://Scripts/game_over.gd" id="1_mjsgh"]
+[ext_resource type="AudioStream" uid="uid://updwel1xx1kw" path="res://SFX/game-over-deep-male-voice-clip-352695.mp3" id="4_xnpu1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xnpu1"]
 texture = ExtResource("1_lwxdm")
@@ -110,6 +111,9 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_lwxdm")
 text = "Menu
 "
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xnpu1")
 
 [connection signal="pressed" from="ColorRect/Panel/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="ColorRect/Panel/Menu" to="." method="_on_menu_pressed"]

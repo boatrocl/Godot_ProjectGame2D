@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqx3vb34vpobn"]
+[gd_scene load_steps=8 format=3 uid="uid://bqx3vb34vpobn"]
 
-[ext_resource type="Script" uid="uid://62qj0rmsc30n" path="res://Scene/win.gd" id="1_58yip"]
+[ext_resource type="Script" uid="uid://62qj0rmsc30n" path="res://Scripts/win.gd" id="1_58yip"]
 [ext_resource type="Texture2D" uid="uid://cg5tr7wqqr6li" path="res://Assets/sci-fi-platformer-1-bit-pixel-art-game-kit/ไม่มีชื่อ (1152 x 648 px).png" id="1_kx1dy"]
 [ext_resource type="FontFile" uid="uid://816oy2tvqwp6" path="res://Font/Iceberg/Iceberg-Regular.ttf" id="2_kx1dy"]
+[ext_resource type="AudioStream" uid="uid://dr7t0qu23t7cf" path="res://SFX/WinSFX2-epic.mp3" id="4_y8owf"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58yip"]
 texture = ExtResource("1_kx1dy")
@@ -83,6 +84,9 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_kx1dy")
 text = "Menu
 "
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_y8owf")
 
 [connection signal="pressed" from="Panel/Newgame" to="." method="_on_newgame_pressed"]
 [connection signal="pressed" from="Panel/Menu" to="." method="_on_menu_pressed"]
